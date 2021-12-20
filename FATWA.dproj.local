@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899/12/30 00:00:00.000.574,C:\Users\admin\Desktop\FATWA\Unit2.pas=C:\Users\admin\Desktop\FATWA\datamodule.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.274,=C:\Users\admin\Desktop\FATWA\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.544,=C:\Users\admin\Desktop\FATWA\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.624,C:\Users\admin\Desktop\FATWA\Unit2.pas=C:\Users\admin\Desktop\FATWA\MPlayer.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.983,C:\Users\admin\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\admin\Desktop\FATWA\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.199,=C:\Users\admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.258,=C:\Users\admin\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.652,C:\Users\admin\Desktop\FATWA\splashscreen.pas=C:\Users\admin\Desktop\FATWA\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.750,C:\Users\admin\Desktop\FATWA\Project1.dproj=C:\Users\admin\Desktop\FATWA\FATWA.dproj</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.983,C:\Users\admin\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\admin\Desktop\FATWA\Unit1.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.574,C:\Users\admin\Desktop\FATWA\Unit2.dfm=C:\Users\admin\Desktop\FATWA\datamodule.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.402,=C:\Users\admin\Desktop\FATWA\Unit2.pas</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.652,C:\Users\admin\Desktop\FATWA\splashscreen.dfm=C:\Users\admin\Desktop\FATWA\Unit2.dfm</Transaction>
+    <Transaction>1899/12/30 00:00:00.000.389,C:\Users\admin\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\admin\Desktop\FATWA\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

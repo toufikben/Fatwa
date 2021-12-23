@@ -236,7 +236,8 @@ end;
 procedure Tmain.btn1Click(Sender: TObject);
 begin
 TStyleManager.SetStyle(cbb2.Items[cbb2.ItemIndex]);
-
+SetWindowPos(Handle, HWND_TOPMOST, 0, 0, 0, 0,
+                     SWP_NoMove or SWP_NoSize);
 end;
 
 procedure Tmain.btn3Click(Sender: TObject);

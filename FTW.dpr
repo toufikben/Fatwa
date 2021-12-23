@@ -15,7 +15,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  TStyleManager.TrySetStyle('Sapphire Kamri');
+  TStyleManager.TrySetStyle('Onyx Blue');
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(Tmain, main);

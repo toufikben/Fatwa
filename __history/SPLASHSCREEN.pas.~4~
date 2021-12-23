@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.WinXCtrls,MMSystem;
+  Vcl.WinXCtrls;
 
 type
   TForm1 = class(TForm)
@@ -66,9 +66,9 @@ if not DirectoryExists('sound') then
  CreateDir('sound');  end;
 if FileExists( 'sound\besmala.wav')   then
  begin
- sndPlaySound('sound\besmala.wav',SND_SYNC );
- Timer1.Enabled := false;
  ActivityIndicator1.Animate := False;
+// sndPlaySound('sound\besmala.wav',SND_SYNC );
+// Timer1.Enabled := false;
  form1.hide;
  main.show;
  end
@@ -80,9 +80,8 @@ if FileExists( 'sound\besmala.wav')   then
     // setting up the temporary file name
     vExeFile := ExtractFilePath(ParamStr(0)) +'sound\'+'besmala.wav';
       RS.SaveToFile(vExeFile);
-      sndPlaySound('sound\besmala.wav',SND_SYNC );
-       ActivityIndicator1.Animate := False;
- Timer1.Enabled := false;
+//      sndPlaySound('sound\besmala.wav',SND_SYNC );
+// Timer1.Enabled := false;ActivityIndicator1.Animate := False;
  form1.hide;
  main.show;
   finally

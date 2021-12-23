@@ -22,7 +22,7 @@ object main: Tmain
     Top = 41
     Width = 846
     Height = 492
-    ActivePage = ts2
+    ActivePage = ts3
     Align = alClient
     BiDiMode = bdRightToLeft
     ParentBiDiMode = False

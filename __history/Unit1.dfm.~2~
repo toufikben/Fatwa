@@ -22,13 +22,12 @@ object main: Tmain
     Top = 41
     Width = 846
     Height = 492
-    ActivePage = ts2
+    ActivePage = TabSheet1
     Align = alClient
     BiDiMode = bdRightToLeft
     ParentBiDiMode = False
     TabOrder = 0
     TabWidth = 200
-    ExplicitTop = 47
     object ts1: TTabSheet
       Caption = #1575#1604#1576#1581#1579' '#1608#1575#1604#1578#1588#1594#1610#1604
       DesignSize = (

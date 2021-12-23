@@ -243,7 +243,7 @@ procedure Tmain.btn3Click(Sender: TObject);
 var
  AppDir,path: string;
 begin
-if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') then
+if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') or (la.Caption='') then
 begin
 showmessage('!...„‰ ›÷·ﬂ «„·√ Ã„Ì⁄ «·›—«€« ')
 end

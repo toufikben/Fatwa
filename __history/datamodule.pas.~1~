@@ -48,8 +48,8 @@ begin
 Fconn.Connected := False;
 Fconn.Params.DriverID := 'SQLite';
 Fconn.Params.Add('Database=FATWA.s3db');
-//Fconn.Params.Values['Encrypt'] := 'aes-256'; //encrepty database
-//Fconn.Params.Password := 'Fatwa@!alHoda';   //password database
+//Fconn.Params.Values['Encrypt'] := 'aes-256';
+//Fconn.Params.Password := 'Fatwa@!alHoda';
   try
     // Establish the connection.
 

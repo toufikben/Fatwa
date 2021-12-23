@@ -243,7 +243,7 @@ procedure Tmain.btn3Click(Sender: TObject);
 var
  AppDir,path: string;
 begin
-if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') then
+if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') or (la.Caption='') then
 begin
 showmessage('!...„‰ ›÷·ﬂ «„·√ Ã„Ì⁄ «·›—«€« ')
 end
@@ -439,25 +439,25 @@ procedure Tmain.FormClose(Sender: TObject; var Action: TCloseAction);var
 vExeFile: string;
   RS: TResourceStream;
 begin
-  if FileExists( 'sound\bhamdala.wav')   then
- begin  sndPlaySound('sound\bhamdala.wav',SND_SYNC );
-  DM.Free;
+//  if FileExists( 'sound\bhamdala.wav')   then
+// begin  sndPlaySound('sound\bhamdala.wav',SND_SYNC );
+
+ DM.Free;
 Application.Terminate; Application.ProcessMessages;
- end
-  else
-  begin
-   RS := TResourceStream.Create(HInstance,'bhamdala', RT_RCDATA);
-
-  try
-    // setting up the temporary file name
-    vExeFile := ExtractFilePath(ParamStr(0)) +'sound\'+'bhamdala.wav';
-      RS.SaveToFile(vExeFile);
-      sndPlaySound('sound\bhamdala.wav',SND_SYNC );
-
-   finally
-    RS.Free;
-  end;
-   end;
+// end
+//  else
+//  begin
+//   RS := TResourceStream.Create(HInstance,'bhamdala', RT_RCDATA);
+//
+//  try
+//    // setting up the temporary file name
+//    vExeFile := ExtractFilePath(ParamStr(0)) +'sound\'+'bhamdala.wav';
+//      RS.SaveToFile(vExeFile);
+//      sndPlaySound('sound\bhamdala.wav',SND_SYNC );
+//   finally
+//    RS.Free;
+//  end;
+//   end;
 
 //MMSystem
  //  sndPlaySound('help\1.wav',SND_ASYNC );

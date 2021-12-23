@@ -243,7 +243,7 @@ procedure Tmain.btn3Click(Sender: TObject);
 var
  AppDir,path: string;
 begin
-if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') then
+if (edt1.text  = '') or (cb1.text='') or (Memo1.Text='') or (la.Caption='') then
 begin
 showmessage('!...„‰ ›÷·ﬂ «„·√ Ã„Ì⁄ «·›—«€« ')
 end
@@ -441,7 +441,8 @@ vExeFile: string;
 begin
   if FileExists( 'sound\bhamdala.wav')   then
  begin  sndPlaySound('sound\bhamdala.wav',SND_SYNC );
-  DM.Free;
+
+ DM.Free;
 Application.Terminate; Application.ProcessMessages;
  end
   else
@@ -453,7 +454,6 @@ Application.Terminate; Application.ProcessMessages;
     vExeFile := ExtractFilePath(ParamStr(0)) +'sound\'+'bhamdala.wav';
       RS.SaveToFile(vExeFile);
       sndPlaySound('sound\bhamdala.wav',SND_SYNC );
-
    finally
     RS.Free;
   end;

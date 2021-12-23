@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/12/19 12:14:53.000.991,=C:\Users\admino\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/22 22:47:34.000.610,=C:\Users\admino\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/22 22:48:11.000.119,C:\Users\admino\Desktop\FATAWA\Unit1.pas=C:\Users\admino\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/12/22 22:48:11.000.119,C:\Users\admino\Desktop\FATAWA\Unit1.dfm=C:\Users\admino\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2021/12/22 22:48:13.000.751,C:\Users\admino\Desktop\FATAWA\Project1.dproj=C:\Users\admino\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2021/12/22 22:51:35.000.932,C:\Users\admino\Desktop\FATAWA\Unit1.pas=C:\Users\admino\Desktop\FATAWA\SPLASHSCREEN.pas</Transaction>
+    <Transaction>2021/12/22 22:51:35.000.932,C:\Users\admino\Desktop\FATAWA\Unit1.dfm=C:\Users\admino\Desktop\FATAWA\SPLASHSCREEN.dfm</Transaction>
+    <Transaction>2021/12/22 22:53:19.000.749,=C:\Users\admino\Desktop\FATAWA\datamodule.pas</Transaction>
+    <Transaction>2021/12/22 22:53:19.000.845,=C:\Users\admino\Desktop\FATAWA\Unit1.pas</Transaction>
+    <Transaction>2021/12/22 22:53:42.000.691,=C:\Users\admino\Desktop\FATAWA\Fatwa.rc</Transaction>
+    <Transaction>2021/12/23 00:06:26.000.360,C:\Users\admino\Desktop\FATAWA\Project1.dproj=C:\Users\admino\Desktop\FATAWA\FTW.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

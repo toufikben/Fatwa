@@ -7,7 +7,8 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs,MMSystem, Vcl.TitleBarCtrls,
   Vcl.NumberBox, Vcl.StdCtrls, Vcl.WinXCtrls, Vcl.ComCtrls, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.ExtCtrls, Vcl.MPlayer, Vcl.Buttons,system.UITypes,
-  Vcl.Imaging.pngimage,Winapi.ShellAPI, Vcl.WinXPickers,DateUtils,System.IOUtils,Vcl.Themes,Vcl.Styles;
+  Vcl.Imaging.pngimage,Winapi.ShellAPI, Vcl.WinXPickers,DateUtils,System.IOUtils,Vcl.Themes,Vcl.Styles,
+  system.Types;
 
 type
   Tmain = class(TForm)
@@ -66,6 +67,10 @@ type
     Timer2: TTimer;
     cbb2: TComboBox;
     btn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn4: TBitBtn;
+    ProgressBar1: TProgressBar;
+    OpenDialog2: TOpenDialog;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -85,6 +90,8 @@ type
     procedure MediaPlayer1Click(Sender: TObject; Button: TMPBtnType;
       var DoDefault: Boolean);
     procedure FormCreate(Sender: TObject);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
   private
   procedure StylesListRefresh;
     { Private declarations }
@@ -137,7 +144,53 @@ procedure get_duration(time:integer; var duration:string; separateur:string);
     duration:=duration+separateur+'0'+inttostr(Seconde)
   else
     duration:=duration+separateur+inttostr(Seconde);
-  end; {get_duration}
+ end; {get_duration}
+
+  procedure Tmain.BitBtn4Click(Sender: TObject);
+var
+path,pathexe,aFile: string;
+  dirFiles : TStringDynArray;
+begin
+
+  if MessageDlg('Â·  —Ìœ Õﬁ« «” —Ã«⁄ ﬁ«⁄œ… «·»Ì«‰«   ø...',
+    mtConfirmation, [mbYes, mbNo], 0, mbYes) = mrYes then
+  begin
+
+if OpenDialog2.Execute then
+if OpenDialog2.FileName <>'' then
+begin
+path :=ExtractFilePath (OpenDialog2.FileName);
+pathexe := ExtractFilePath (application.ExeName);
+try
+   dirFiles := TDirectory.GetFiles( pathexe+'backup\');
+
+   ProgressBar1.Max := Length(dirFiles);
+  ProgressBar1.Position := 0;
+  for aFile in dirFiles do
+  begin
+
+    if TPath.MatchesPattern(ExtractFileName(aFile),'*.s3db',false) then
+    begin
+  dm.Fconn.Connected := false;
+  DeleteFile (pathexe+ '\FATWA.s3db');
+  CopyFile(PChar (ExtractFileName(OpenDialog2.FileName)), PChar(pathexe+'\'+'FATWA.s3db'), true)  ;
+  showmessage('·ﬁœ  „ «” —Ã«⁄ ﬁ«⁄œ… «·»Ì«‰«  »‰Ã«Õ ..ﬁ„ »«⁄«œ…  ‘€Ì· «·»—‰«„Ã „‰ ›÷·ﬂ');
+      end;
+     ProgressBar1.Position := 1 + ProgressBar1.Position;
+    // dm.Fconn.Connected := true;
+    // dm.FDQuery1.Active := true;
+
+  end;
+
+except
+showmessage('·„ Ì „ «” —Ã«⁄ ﬁ«⁄œ… «·»Ì«‰« ');
+end;
+end;
+end;
+
+end;
+
+
 
 
   procedure Tmain.LoadImage();
@@ -203,6 +256,37 @@ begin
  TM1.Time := 0;
  TM2.Time := 0;
 
+end;
+
+procedure Tmain.BitBtn2Click(Sender: TObject);
+var
+  dirFiles : TStringDynArray;
+  aFile : string;
+begin
+if not DirectoryExists(ExtractFilePath (application.ExeName)+'backup') then
+ MkDir(ExtractFilePath (application.ExeName)+'backup');
+
+if not FileExists(ExtractFilePath (application.ExeName)+'\FATWA.s3db')  then
+begin
+showmessage('·„ Ì „ «ÌÃ«œ ﬁ«⁄œ… «·»Ì«‰«   Õ«Ê· „Ãœœ«...');
+  end
+  else
+begin
+
+  dirFiles := TDirectory.GetFiles(ExtractFilePath (application.ExeName));
+   ProgressBar1.Max := Length(dirFiles);
+  ProgressBar1.Position := 0;
+  for aFile in dirFiles do
+  begin
+    if TPath.MatchesPattern(ExtractFileName(aFile),'*.s3db',false) then
+    begin
+    CopyFile(PChar ('FATWA.s3db'), PChar('backup\'+FormatDateTime('dd-mm-yyyy-hh-mm-ss', Now)+'.s3db'), true);
+    showmessage('·ﬁœ  „ ⁄„· ‰”Œ… «Õ Ì«ÿÌ… »‰Ã«Õ');
+      end;
+         ProgressBar1.Position := 1 + ProgressBar1.Position;
+
+  end;
+end;
 end;
 
 procedure Tmain.BitBtn3Click(Sender: TObject);
@@ -433,17 +517,23 @@ procedure Tmain.FormActivate(Sender: TObject);
 begin
  TM1.Time := 0;
  TM2.Time := 0;
-
+ dm.Fconn.Connected := true;
+dm.FDQuery1.Active := True;
+ if not DirectoryExists(ExtractFilePath (application.ExeName)+'Fatwa_audio_loction') then
+ begin
+ CreateDir(ExtractFilePath (application.ExeName)+'Fatwa_audio_loction');
+end;
 end;
 
 procedure Tmain.FormClose(Sender: TObject; var Action: TCloseAction);var
 vExeFile: string;
   RS: TResourceStream;
 begin
-  if FileExists( 'sound\bhamdala.wav')   then
+  if FileExists(ExtractFilePath (application.ExeName)+'sound\bhamdala.wav')   then
  begin  sndPlaySound('sound\bhamdala.wav',SND_SYNC );
-  DM.Free;
-Application.Terminate; Application.ProcessMessages;
+//Application.Terminate;
+ form1.Close;
+// application.Destroy;
  end
   else
   begin

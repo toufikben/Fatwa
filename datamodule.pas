@@ -45,18 +45,13 @@ uses Unit1;
 
 procedure TDM.DataModuleCreate(Sender: TObject);
 begin
+  try
 Fconn.Connected := False;
+Fconn.LoginPrompt := false;
 Fconn.Params.DriverID := 'SQLite';
 Fconn.Params.Add('Database=FATWA.s3db');
 //Fconn.Params.Values['Encrypt'] := 'aes-256'; //encrepty database
 //Fconn.Params.Password := 'Fatwa@!alHoda';   //password database
-  try
-    // Establish the connection.
-
-Fconn.Connected := true;
-FDQuery1.Active := True;
-   // executeButton.Enabled := true;
-  //  outputMemo.Text := 'Connection established!';
   except
     on E: EDatabaseError do
       ShowMessage('ÕœÀ Œÿ√ «À‰«¡ «·« ’«· »ﬁ«⁄œ… «·»Ì«‰« ' + E.Message);
@@ -73,10 +68,7 @@ Fconn.ExecSQL ('CREATE TABLE IF NOT EXISTS fatwa_audio (ID_Mufti INTEGER PRIMARY
 Fconn.ExecSQL ('CREATE TABLE IF NOT EXISTS Fatwa (ID_fatwa INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,Mufti_name TEXT(300),Fatwa_Title TEXT(250),Fatwa_description TEXT(1000),Fatwa_audio_loction TEXT(500) ,start_audio TEXT(10) ,end_audio TEXT (10))');
 Fconn.ExecSQL ('CREATE TABLE IF NOT EXISTS lang (ID_lang INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,lang TEXT(10))');      //,FOREIGN KEY(id_mofti) REFERENCES Mufti(id_mofti)
 
-if not DirectoryExists('Fatwa_audio_loction') then
- begin
- CreateDir('Fatwa_audio_loction');
-end;
+
 end;
 
 

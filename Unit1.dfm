@@ -78,7 +78,7 @@ object main: Tmain
           AlignWithMargins = True
           Left = 4
           Top = 49
-          Width = 826
+          Width = 830
           Height = 33
           Align = alBottom
           VisibleButtons = [btPlay, btPause, btStop, btStep, btBack]
@@ -86,6 +86,7 @@ object main: Tmain
           ParentDoubleBuffered = False
           TabOrder = 1
           OnClick = MediaPlayer1Click
+          ExplicitWidth = -4
         end
         object TrackBar1: TTrackBar
           AlignWithMargins = True

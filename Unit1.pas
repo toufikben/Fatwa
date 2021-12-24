@@ -558,6 +558,8 @@ begin
 end;
 procedure Tmain.FormCreate(Sender: TObject);
 begin
+ Application.MainFormOnTaskbar := False; //show icon on taskbar
+
 // TStyleManager.SetStyle(cbb2.Items[cbb2.ItemIndex]);
 //if cbb2.Items.Count = 0 then
 StylesListRefresh;

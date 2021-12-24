@@ -70,7 +70,8 @@ if FileExists( 'sound\besmala.wav')   then
  Timer1.Enabled := false;
  ActivityIndicator1.Animate := False;
  form1.hide;
- main.show;
+  main.Visible := true;
+
  end
   else
   begin

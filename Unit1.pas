@@ -177,6 +177,10 @@ try
   showmessage('áŞÏ Êã ÇÓÊÑÌÇÚ ŞÇÚÏÉ ÇáÈíÇäÇÊ ÈäÌÇÍ ..Şã ÈÇÚÇÏÉ ÊÔÛíá ÇáÈÑäÇãÌ ãä İÖáß');
       end;
      ProgressBar1.Position := 1 + ProgressBar1.Position;
+//   if MessageDlg('åá ÊÑíÏ ÍŞÇ ÇÓÊÑÌÇÚ ŞÇÚÏÉ ÇáÈíÇäÇÊ  ¿', mtInformation , [mbok], 0, mbOk)=mrOk  then
+//ShellExecute(Handle, nil, PChar(Application.ExeName), nil, nil, SW_SHOWNORMAL);
+//Application.Terminate;// or halt
+halt;
     // dm.Fconn.Connected := true;
     // dm.FDQuery1.Active := true;
 

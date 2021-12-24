@@ -9,7 +9,7 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
   FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
   FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.VCLUI.Wait, FireDAC.Comp.Client,Vcl.Dialogs,
-  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
+  FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,vcl.Forms,
   FireDAC.Comp.DataSet;
 
 type
@@ -47,9 +47,10 @@ procedure TDM.DataModuleCreate(Sender: TObject);
 begin
   try
 Fconn.Connected := False;
+Fconn.Params.Clear;
 Fconn.LoginPrompt := false;
 Fconn.Params.DriverID := 'SQLite';
-Fconn.Params.Add('Database=FATWA.s3db');
+Fconn.Params.Add('Database'+'='+ExtractFilePath (application.ExeName)+'FATWA.s3db');
 //Fconn.Params.Values['Encrypt'] := 'aes-256'; //encrepty database
 //Fconn.Params.Password := 'Fatwa@!alHoda';   //password database
   except

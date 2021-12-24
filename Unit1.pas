@@ -71,6 +71,7 @@ type
     BitBtn4: TBitBtn;
     ProgressBar1: TProgressBar;
     OpenDialog2: TOpenDialog;
+    BitBtn5: TBitBtn;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
@@ -92,6 +93,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
   private
   procedure StylesListRefresh;
     { Private declarations }
@@ -197,7 +199,12 @@ end;
 
 
 
-  procedure Tmain.LoadImage();
+  procedure Tmain.BitBtn5Click(Sender: TObject);
+begin
+ShellExecute(Handle,'open', PChar('"' +(ExtractFilePath (application.ExeName))+'backup'+'"'),nil,nil, SW_SHOWNORMAL);
+end;
+
+procedure Tmain.LoadImage();
 begin
   if ( dm.FDQuery1.IsEmpty = true )  then
     exit;
@@ -267,7 +274,7 @@ var
   dirFiles : TStringDynArray;
   aFile : string;
 begin
-if not DirectoryExists(ExtractFilePath (application.ExeName)+'backup') then
+if not DirectoryExists(ExtractFilePath (application.ExeName)+'\backup') then
  MkDir(ExtractFilePath (application.ExeName)+'backup');
 
 if not FileExists(ExtractFilePath (application.ExeName)+'\FATWA.s3db')  then
@@ -284,7 +291,7 @@ begin
   begin
     if TPath.MatchesPattern(ExtractFileName(aFile),'*.s3db',false) then
     begin
-    CopyFile(PChar ('FATWA.s3db'), PChar('backup\'+FormatDateTime('dd-mm-yyyy-hh-mm-ss', Now)+'.s3db'), true);
+    CopyFile(PChar (ExtractFilePath (application.ExeName)+'\FATWA.s3db'), PChar(ExtractFilePath (application.ExeName)+'\backup\'+FormatDateTime('dd-mm-yyyy-hh-mm-ss', Now)+'.s3db'), false);
     showmessage('·ﬁœ  „ ⁄„· ‰”Œ… «Õ Ì«ÿÌ… »‰Ã«Õ');
       end;
          ProgressBar1.Position := 1 + ProgressBar1.Position;

@@ -248,6 +248,13 @@ begin
 
 procedure Tmain.SearchBox1Change(Sender: TObject);
 begin
+tmr1.Enabled :=False;
+Timer1.Enabled :=False;
+Timer2.Enabled :=False;
+WindowsMediaPlayer1.controls.Stop;
+if MediaPlayer1.Mode = mpPlaying then
+ MediaPlayer1.Stop;
+
 if rg1.ItemIndex = 0  then
 begin
 dm.FDQuery1.SQL.Text:= 'SELECT * FROM fatwa WHERE Fatwa_Title like '+ QuotedStr(SearchBox1.text+'%')  ;
@@ -264,6 +271,13 @@ end;
 
 procedure Tmain.SearchBox2Change(Sender: TObject);
 begin
+tmr1.Enabled :=False;
+Timer1.Enabled :=False;
+Timer2.Enabled :=False;
+WindowsMediaPlayer1.controls.Stop;
+if MediaPlayer1.Mode = mpPlaying then
+ MediaPlayer1.Stop;
+
 if rg2.ItemIndex = 0  then
 begin
 dm.FDQuery1.SQL.Text:= 'SELECT * FROM fatwa WHERE Fatwa_Title like '+ QuotedStr('%'+SearchBox2.text+'%')  ;

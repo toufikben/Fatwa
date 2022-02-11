@@ -19,9 +19,6 @@ Coordinates=522,146,56,58
 [lblFilename]
 Coordinates=176,10,81,58
 
-[Button1]
-Coordinates=104,282,59,58
-
 [BitBtn3]
 Coordinates=563,214,56,58
 
@@ -116,7 +113,7 @@ Coordinates=267,10,60,58
 Coordinates=69,10,120,212
 
 []
-Coordinates=532,414,91,36
+Coordinates=104,282,59,58
 
 [tm1]
 Coordinates=236,282,40,36

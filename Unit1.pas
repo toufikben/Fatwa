@@ -216,8 +216,13 @@ end;
 
 procedure Tmain.BitBtn7Click(Sender: TObject);
 begin
- MediaPlayer1.Stop;
+tmr1.Enabled :=False;
+Timer1.Enabled :=False;
+Timer2.Enabled :=False;
  WindowsMediaPlayer1.controls.stop;
+if  MediaPlayer1.Mode = mpPlaying then
+MediaPlayer1.Stop;
+
 end;
 
 procedure Tmain.BitBtn8Click(Sender: TObject);
